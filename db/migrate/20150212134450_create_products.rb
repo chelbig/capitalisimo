@@ -8,7 +8,6 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :price
       t.integer :start_date
       t.integer :end_date
-      t.integer :user_id
 
       t.timestamps null: false
     end
