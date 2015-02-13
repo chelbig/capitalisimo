@@ -14,8 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Registrate <span class="sr-only">(current)</span></a></li>
-         <li><a href="#">Usuarios <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Quienes somos <span class="sr-only">(current)</span></a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Productos <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -26,6 +25,19 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
+      </ul>
+
+
+ <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+   <% if user_signed_in? %>
+          <li><%= link_to "New product", new_product_path, class: "active" %></li>
+          <li><%= link_to "Account", edit_user_registration_path %></li>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path, class: "active" %></li>
+          <li><%= link_to "Sign In", new_user_session_path, class: "active" %></li>
+        <% end %>
       </ul>
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -40,15 +52,5 @@
 
 
 
-<p><%= link_to "Registrate aquí ", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
-  </div>
 
 
-   <% if user_signed_in? %>
-          <li><%= link_to "New product", new_product_path, class: "active" %></li>
-          <li><%= link_to "Account", edit_user_registration_path %></li>
-        <% else %>
-          <li><%= link_to "Sign Up", new_user_registration_path, class: "active" %></li>
-          <li><%= link_to "Sign In", new_user_session_path, class: "active" %></li>
-        <% end %>
-      </ul>
