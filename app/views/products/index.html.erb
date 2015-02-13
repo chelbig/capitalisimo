@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
+<% if !user_signed_in? %>
+  <div class="jumbotron">
+    <h1> PELICULAS FABULOSAS</h1>
+    <p>Tu sitio para subir, comentar, recomendar y colocarle nota a tus peliculas favoritas. La más grande red de oponión de CINE, donde podras compartir y crear tu propia audiencia.</p>
+    <p><%= link_to "Registrate aquí ", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+  </div>
+<% end %>
 
-<h1>Listing Products</h1>
+
+<h1>PRODUCTOS</h1>
+
+
 
 <table>
   <thead>
