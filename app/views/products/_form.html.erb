@@ -12,42 +12,39 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :Nombre_del_Artículo %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :Descripción %><br>
     <%= f.text_area :description %>
   </div>
 
  <div class="field">
-    <%= f.label :category %><br>
+    <%= f.label :Categoría %><br>
     <%= f.text_area :category %>
   </div>
 
   <div class="field">
-    <%= f.label :picture %><br>
-    <%= f.text_field :picture %>
+    <%= f.label :Foto %><br>
+    <%= f.file_field :picture %>
+
   </div>
   <div class="field">
-    <%= f.label :stock %><br>
+    <%= f.label :Stock %><br>
     <%= f.number_field :stock %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
+    <%= f.label :Precio %><br>
     <%= f.number_field :price %>
   </div>
   <div class="field">
-    <%= f.label :start_date %><br>
+    <%= f.label :Fecha_Inicio %><br>
     <%= f.number_field :start_date %>
   </div>
   <div class="field">
-    <%= f.label :end_date %><br>
+    <%= f.label :Fecha_Término %><br>
     <%= f.number_field :end_date %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
