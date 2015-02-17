@@ -1,51 +1,45 @@
 <p id="notice"><%= notice %></p>
 <% if !user_signed_in? %>
-  <div class="jumbotron">
-    <h1>CAPITALISIMO</h1>
-    <p>Venta de productos y servicios sin intermediarios.</p>
-    <p><%= link_to "Registrate aquí para empezar", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
-  </div>
+<div class="jumbotron">
+  <h1>CAPITALÍSIMO</h1>
+  <p>Venta de productos y servicios sin intermediarios.</p>
+  <p><%= link_to "Registrate aquí para empezar", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+</div>
 <% end %>
 
 
-<h1>PRODUCTOS</h1>
+<div class="container">
+  <h1>Últimos Avisos Publicados</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th>Picture</th>
-      <th>Stock</th>
-      <th>Price</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <% @products.each do |product| %>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.category %></td>
-        <td><%= product.picture %></td>
-        <td><%= product.stock %></td>
-        <td><%= product.price %></td>
-        <td><%= product.start_date %></td>
-        <td><%= product.end_date %></td>
-        <td><%= product.user_id %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <h4><%= product.name %></h4>
+      <p><%= product.description %></p>
+      <p><%= product.category %></p>
+      <%= image_tag(product.picture, :class =>'img-responsive')%>
+      
+      <p>Stock <%= product.stock %> unidades</p>
+      <h3> $ <%=product.price %></h3>
+      <p>Publicado el: <%= product.start_date %></p>
+      <p>Oferta vigente hasta el: <%= product.end_date %></p>
+      <p>Usuario: <%= product.user_id %></p>
+      <div class="buttons" style="margin-top:10px; margin-bottom:10px">
+        <%= link_to 'Ver Detalle', product, :class =>'btn' %>
+        <%= link_to 'Editar', edit_product_path(product), :class =>'btn' %>
+        <%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' }, :class =>'btn' %>
+      </div>
+    </div>
+  </div>
 
-<br>
+  <% end %>
 
-<%= link_to 'New Product', new_product_path %>
+</div>
+
+<div class="container">
+  <%= link_to 'Publicar un aviso', new_product_path, :class =>'btn' %>
+</div>
+
+
