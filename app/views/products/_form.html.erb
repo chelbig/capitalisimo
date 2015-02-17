@@ -38,14 +38,15 @@
     <%= f.label :Precio %><br>
     <%= f.number_field :price %>
   </div>
-  <div class="field">
-    <%= f.label :Fecha_Inicio %><br>
-    <%= f.number_field :start_date, class:'datepicker' %>
+    <div class="field">
+    <%= f.label :Inicio %><br>
+    <%= f.number_field :created_at, class:'datepicker' %>
   </div>
-  <div class="field">
-    <%= f.label :Fecha_Término %><br>
-    <%= f.number_field :end_date, class:'datepicker' %>
+    <div class="field">
+    <%= f.label :Término %><br>
+    <%= f.number_field :Finished_at, class:'datepicker' %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
