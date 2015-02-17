@@ -40,11 +40,12 @@
   </div>
     <div class="field">
     <%= f.label :Inicio %><br>
-    <%= f.number_field :created_at, class:'datepicker' %>
+    <%= f.text_field :start_date, id:'datepicker' %>
   </div>
     <div class="field">
     <%= f.label :Término %><br>
-    <%= f.number_field :Finished_at, class:'datepicker' %>
+    <%= f.text_field :end_date, id:'datepicker1' %>
+    <!-- datepicker funciona con f.text_field y no con f.number_field -->
   </div>
 
   <div class="actions">
