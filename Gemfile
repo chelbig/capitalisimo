@@ -28,8 +28,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #gema para subir archivos
 gem 'carrierwave'
 
+<<<<<<< HEAD
 #gema para implementar jquery con rails
 gem 'jquery-ui-rails'
+=======
+gem 'jquery-ui'
+>>>>>>> 318e329c174e67e00dec0c7c7003665442b15b96
 
 
 # Use ActiveModel has_secure_password
